@@ -17,4 +17,5 @@ jobs:
 
 addons:
   homebrew:
-    brewfile: Brewfile.travis
+    brewfile: ./Brewfile.travis
+    update: true
