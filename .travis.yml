@@ -1,9 +1,21 @@
-rvm:
-  - 2.5
-  - 2.2
-gemfile:
-  - gemfiles/Gemfile.rails-3.2.x
-  - gemfiles/Gemfile.rails-3.0.x
-env:
-  - ISOLATED=true
-  - ISOLATED=false
+dist: xenial
+language: php
+php:
+  - '5.6'
+
+matrix:
+  include:
+    - language: python
+      python: 3.6
+      script:
+      - python -c "print('Hi from Python!')"
+
+    - language: node_js
+      node_js: 9
+      script:
+      - node -e "console.log('Hi from NodeJS!')"
+
+    - language: java
+      jdk: openjdk8
+      script:
+      - javac -help
