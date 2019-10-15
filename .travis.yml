@@ -1,47 +1,9 @@
-sudo: false
-
-
-before_script:
-  - echo "before_script"
-  - sleep 1s
-
-script:
-  - echo "script"
-  - sleep 1s
-
-after_success:
-  - echo "after_success"
-  - sleep 1s
-
-after_failure:
-  - echo "after_failure"
-  - sleep 1s
-
-before_install: 
-  - echo "before_install"
-  - sleep 1s
-
-install:
-  - echo "install"
-  - sleep 1s
-
-
-# Heroku, Amazon 또는 다른 지원되는 플랫폼에 코드를 배포함으로써 정의됩니다
-# https://docs.travis-ci.com/user/job-lifecycle/#deploying-your-code
-
-# before_deploy:
-#   - echo "before_deploy"
-#   - sleep 1s
-
-# deploy:
-#   - echo "deploy"
-#   - sleep 1s
-
-# after_deploy:
-#   - echo "after_deploy"
-#   - sleep 1s
-
-
-after_script:
-  - echo "after_script"
-  - sleep 1s
+rvm:
+  - 2.5
+  - 2.2
+gemfile:
+  - gemfiles/Gemfile.rails-3.2.x
+  - gemfiles/Gemfile.rails-3.0.x
+env:
+  - ISOLATED=true
+  - ISOLATED=false
