@@ -1,10 +1,17 @@
+rvm:
+  - 2.2
+  - 2.3
+
+env:
+  - FOO=foo
+  - FOO=bar
+
+script: echo $FOO
+
 jobs:
   include:
-    - stage: "Tests"                # naming the Tests stage
-      name: "Unit Tests"            # names the first Tests stage job
-      script: echo "Running unit tests"
-    - script: echo "Running integration tests"
-      name: "Integration Tests"     # names the second Tests stage job
     - stage: deploy
-      name: "Deploy to GCP"
-      script: echo "Deploy to GCP"
+      script: echo Deploy
+      # Keep in mind to overwrite these here
+      rvm: 2.3
+      env: FOO=foo
