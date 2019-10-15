@@ -1,5 +1,4 @@
 rvm:
-  - 2.2
   - 2.3
 
 env:
@@ -15,3 +14,7 @@ jobs:
       # Keep in mind to overwrite these here
       rvm: 2.3
       env: FOO=foo
+
+addons:
+  homebrew:
+    brewfile: Brewfile.travis
